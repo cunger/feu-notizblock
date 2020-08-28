@@ -10,7 +10,7 @@ Stil-Regeln:
 
 * Konstanten gross (`PI`, `MAX`, `MIN`)
 * Variablen in Camel Case (`greatestCommonDivisor`)
-* Typenvariablen mit t beginnen (`tIndex`, `tColor`)
+* Typenvariablen mit `t` beginnen (`tIndex`, `tColor`)
 
 ## Programmstruktur
 
@@ -81,8 +81,10 @@ program Typen;
   c     : char;
   str   : string;                             { z.B. 'Fnord' }
   color : tColor;
-  days  : array [ integer ] of tWeekday;      { Array, Index kann integer, boolean, char sein }
-  map   : array [ tColor ] of integer;        { Arrays können wie Maps verwendet werden }
+  days  : array [ 1..7 ] of tWeekday;         { Array, der Indextyp kann integer, boolean, char
+                                                und Enums und Ranges sein; Stil-Regel:
+                                                implizite Typendefinitionen wie hier vermeiden }
+  map   : array [ tColor ] of integer;        { Arrays können also wie Maps verwendet werden }
   m     : array [ integer, integer ] of real; { Multi-dimensionales Array, z.B. für Matrizen }
 
 begin
@@ -98,6 +100,34 @@ Auf die Zeichen in einem String kann über Indizes von 1 bis `length(str)` zugeg
 
 ## Arrays
 
+```pas
+type
+tRow = 1..9;
+tCol = 1..9;
+
+tVector = array [tCol] of integer;
+tMatrix = array [tRow, tCol] of integer;
+
+var
+vector = tVector;
+matrix = tMatrix;
+
+begin
+  { Zuweisung }
+
+  vector[1] := 0;
+  vector[2] := 0;
+  ...
+
+  matrix[1, 1] := 4;
+  matrix[1, 2] := 7;
+  ...
+
+  { Zugriff }
+
+  writeln(vector[1] * matrix[1, 1] + vector[2] * matrix[1, 2]);
+end.
+```
 
 ## Schleifen
 
