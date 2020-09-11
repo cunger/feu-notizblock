@@ -38,7 +38,7 @@ program ProgrammStruktur;
     f := true { Der Ausgabewert der Funktion wird dem Funktionsparameter zugewiesen. }
   end;
 
-  procedure p(inVar : real, outVar : boolean);
+  procedure p(inBlah : real, var ioBlubb, outBlubb : boolean);
   { Beschreibung, was die Prozedur macht. }
 
     var
