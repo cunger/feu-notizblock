@@ -38,11 +38,15 @@ program ProgrammStruktur;
     f := true { Der Ausgabewert der Funktion wird dem Funktionsparameter zugewiesen. }
   end;
 
-  procedure p(inBlah : real, var ioBlubb, outBlubb : boolean);
-  { Beschreibung, was die Prozedur macht. }
+  procedure p(inA : integer, var ioB, outC : integer);
+  { var-Parameter: Referenzübergabe (call-by-reference)
+    andere Parameter: Wertübergabe (call-by-value) }
 
     var
     ...
+
+    { Der Skopus von Variablen in Blockstrukturen ist lexikalisch,
+      also der bei Definition, nicht bei Aufruf. }
 
   begin
     ...
