@@ -156,3 +156,49 @@ begin
   i := 0           { Error: illegal assignment to for-loop variable "i" }
 end;
 ```
+
+## Zeiger
+
+```pas
+type
+tList = array [ 0..9 ] of integer;
+tRefList = ^tList; { Zeigertyp }
+tLinkedList = record
+                value : integer;
+                next  : tRefList
+              end;
+
+{ Zeigervariablen }
+
+var
+refAnchor = tRefList;    { Zeigervariable, Anfang der Linked List }
+refFirst  = tLinkedList;
+refSecond = tLinkedList;
+
+begin
+  refAnchor := nil; { Initialisierung der Zeigervariable als leeren Zeiger. }
+
+  new(refFirst); { Erzeugt ein neues Objekt vom Type tLinkedList und }
+                 { weist refFirst einen Zeiger auf dieses Objekt zu. }  
+
+  { Der Zeiger verweist auf die Speicheradresse dieses Objekts. }
+
+  { Dereferenzierung: refFirst^ hat das Objekt als Wert }
+  { und kann also wie jedes Objekt von dem Typen verwendet werden. }
+
+  refFirst^.wert := 1;
+  refFirst^.next := refAnchor;
+
+  new(refSecond);
+  refSecond^.wert := 2;
+  refSecond^.next := refFirst;
+
+  { Vergleich: ref1 = ref2 , wenn ref1^ = ref2^ }
+  { Zwei Zeiger sind also gleich, wenn die Objekte, auf die sie zeigen, }
+  { entweder beide nil oder wertgleich sind (d.h. sie müssen nicht das  }
+  { gleiche Objekt im Speicher sein). }
+
+  dispose(refFirst);  { Zeigervariable zeigt jetzt wieder ins Leere. }
+  dispose(refSecond);
+end.  
+```
