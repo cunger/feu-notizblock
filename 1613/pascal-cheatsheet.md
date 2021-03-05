@@ -168,8 +168,6 @@ tLinkedList = record
                 next  : tRefList
               end;
 
-{ Zeigervariablen }
-
 var
 refAnchor = tRefList;    { Zeigervariable, Anfang der Linked List }
 refFirst  = tLinkedList;
