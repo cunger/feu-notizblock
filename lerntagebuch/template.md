@@ -6,29 +6,33 @@
 
 ------------------
 
-Kurs:
+**Kurs:** 
 
-Thema: 
-
-------------------
-
-
-📚 Lesen
-
-🛠️ Übungsaufgaben bearbeiten
-
-⚗️ Experiment
-
-💾 Code
-
-📡 Kommunikation
+**Thema**:
 
 ------------------
 
-❓ Fragen
 
-💡 Ideen & Einsichten
+📚 **Lesen**
 
-🎉 Erfolge
+🛠️ **Übungsaufgaben**
 
-💣 Risiken
+⚗️ **Experiment**
+
+💾 **Code**
+
+📡 **Kommunikation**
+
+------------------
+
+❓ **Fragen**
+
+💡 **Ideen + Einsichten**
+
+🎉 **Erfolge**
+
+💣 **Risiken**
+
+------------------
+
+➡️ [was als nächstes ansteht]
