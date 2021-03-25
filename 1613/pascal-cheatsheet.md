@@ -69,6 +69,7 @@ program Typen;
   type
   tColorRange = 0..250;
   tOpacity = 0.0..1.0;
+  tNatNumb = 0..maxint;
   tWeekday = (Mon, Tue, Wed, Thu, Fri, Sat, Sun); { Enum }
   tColor = record
              R,
